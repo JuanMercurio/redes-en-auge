@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 public class Comentario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idComentario;
 
     @Column(name = "texto")
     private String texto;
@@ -22,9 +22,11 @@ public class Comentario {
     @Convert(converter = Jsr310JpaConverters.LocalDateTimeConverter.class)
     private LocalDateTime fechaPublicacion;
 
-    @Column(name = "comentador")
+    @ManyToOne
+    @JoinColumn(name = "comentador", referencedColumnName = "idPerfil")
     private Perfil comentador;
 
     @ManyToOne
+    @JoinColumn(name = "publicacion", referencedColumnName = "idPublicacion")
     private Publicacion publicacion;
 }

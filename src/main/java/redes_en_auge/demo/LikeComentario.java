@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @DiscriminatorValue("comentario")
 public class LikeComentario extends Like {
 
-    @Column(name = "comentario")
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "idComentario")
     private Comentario comentario;
 }

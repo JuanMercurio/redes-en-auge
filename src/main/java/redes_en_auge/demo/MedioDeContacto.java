@@ -8,11 +8,12 @@ public class MedioDeContacto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idMedioDeontacto;
 
     @Enumerated(EnumType.STRING)
     private TipoContacto tipo;
 
+    @Column(name = "valor")
     private String valor;
 
 }

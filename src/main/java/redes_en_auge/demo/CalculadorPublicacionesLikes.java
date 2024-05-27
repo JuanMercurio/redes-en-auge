@@ -5,7 +5,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class CalculadorPublicacionesLikes {
+public class CalculadorPublicacionesLikes extends CalculadorDeIntereses{
     private Integer ponderacionesLikes;
     private Integer ponderacionesPublicacion;
 }

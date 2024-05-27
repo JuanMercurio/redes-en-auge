@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 public class LikePublicacion extends Like{
 
     @ManyToOne
+    @JoinColumn(referencedColumnName = "idPublicacion")
     private Publicacion publicacion;
 
     @Column(name = "motivo")

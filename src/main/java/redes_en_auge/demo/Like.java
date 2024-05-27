@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class Like {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
     @Column(name = "fecha_megusta")
@@ -23,6 +23,7 @@ public class Like {
     private LocalDateTime fechaMegusta;
 
     @ManyToOne
+    @JoinColumn(referencedColumnName = "idPerfil")
     private Perfil likeador;
 
     @Column(name = "esta_activo")
