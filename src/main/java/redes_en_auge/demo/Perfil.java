@@ -13,11 +13,15 @@ public class Perfil {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPerfil;
 
+    @Column
     private String sitioWeb;
+    @Column
     private String ubicacion;  // corregido de Ubicacion a ubicacion
+    @Column
     private String urlFotoPerfil;
 
-
+    @OneToOne
+    @JoinColumn(name = "usuario", referencedColumnName = "id")
     private Usuario usuario;
 
     @OneToMany
@@ -25,4 +29,7 @@ public class Perfil {
 
     @OneToMany
     private List<Perfil> seguidores;
+
+    @OneToOne
+    private CalculadorDeIntereses calculador;
 }

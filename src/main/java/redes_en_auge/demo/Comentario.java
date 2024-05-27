@@ -25,7 +25,6 @@ public class Comentario {
     @Column(name = "comentador")
     private Perfil comentador;
 
-    @Column(name = "publicacion")
     @ManyToOne
     private Publicacion publicacion;
 }
