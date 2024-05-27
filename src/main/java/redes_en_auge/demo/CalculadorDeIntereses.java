@@ -1,10 +1,11 @@
 package redes_en_auge.demo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 public abstract class CalculadorDeIntereses {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 }
